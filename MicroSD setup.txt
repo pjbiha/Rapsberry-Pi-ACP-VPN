@@ -1,0 +1,11 @@
+#using DiskPart to format and partition the MicroSD, as it may have unallocated space 
+#the commands:
+diskpart
+list disk
+select disk X  (replace X with the disk number of your SD card)
+clean
+create partition primary
+#check if its done corrected
+list volume
+format fs=fat32 quick
+exit
